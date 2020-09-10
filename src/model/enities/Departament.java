@@ -1,0 +1,56 @@
+package model.enities;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Departament implements Serializable {
+
+    private Integer id;
+    private String name;
+
+    public Departament(){
+    }
+
+    public Departament(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Departament)) return false;
+        Departament that = (Departament) o;
+        return getId().equals(that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "Departament{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+}
